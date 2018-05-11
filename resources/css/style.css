@@ -1,0 +1,185 @@
+/* Universal elements */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+}
+
+main {
+  position: relative;
+  top: 4rem;
+}
+
+.image-container {
+  width: 60%;
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+
+.image-container img,
+.image-container video {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1rem;
+  padding: 1rem 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.btn {
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+  background-color: gray;
+  max-width: 100%;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+/* Header */
+header{
+  z-index: 100;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
+
+header .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+header .logo {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+
+ul li {
+  margin-left: 1rem;
+  display: inline;
+}
+/* Banner */
+
+.banner {
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+}
+
+.banner .content {
+  width: 30%;
+}
+
+.banner .content span {
+  width: 100%;
+  text-align: center;
+}
+/* Intro */
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+}
+
+.intro h1 {
+  margin: 2rem 0 1.5rem 0;
+}
+
+.intro span {
+  margin-top: 3rem;
+}
+
+.info-boxes {
+  width: 40%;
+  padding: 2rem 1.5rem 0 0;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+}
+
+.info-box img {
+  width: 35%;
+  height: auto;
+  padding: 1rem;
+}
+
+.info-box .content {
+  width: 65%;
+  padding: 0.5rem;
+}
+
+/* Majors */
+
+.majors {
+  padding: 2rem 4.5rem;
+  background-color: lightgray;
+}
+
+.majors-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.major-container {
+  width: 30%;
+  background-color: white;
+  margin: 1rem;
+}
+
+.major-container img{
+  width: 100%;
+  height: auto;
+}
+
+.major-container .content {
+  padding: 1rem 1rem 1.5rem 1rem;
+}
+
+/* Exhibitions */
+.exhibits {
+  padding: 2rem 0;
+}
+
+.exhibits-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Footer */
+
+footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  margin: 2rem auto;
+
+}
