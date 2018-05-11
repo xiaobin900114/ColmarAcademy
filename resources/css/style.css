@@ -4,13 +4,18 @@
 }
 
 html {
-  font-family: arial, helvetica, sans-serif;
+  font-family: Montserrat, Roboto, sans-serif;
   font-size: 16px;
+  font-weight: 300;
 }
 
 main {
   position: relative;
   top: 4rem;
+}
+
+strong {
+  font-weight: 400;
 }
 
 .image-container {
@@ -26,19 +31,29 @@ main {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   padding: 1rem 0;
+  color: gray;
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: 1rem;
-  padding: 1rem 0;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  line-height: 1.4;
 }
 
 p {
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1.75;
+  padding: 0.5rem 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 .btn {
@@ -46,12 +61,38 @@ p {
   color: white;
   padding: 0.5rem;
   background-color: gray;
-  max-width: 100%;
+  margin: 2rem auto;
+  transition: opacity 0.5s ease;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.btn:hover {
+  opacity: .8;
 }
 
 .center {
   margin: 0 auto;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  .image-container {
+    width: 100%;
+    padding: 0;
+    height: 25rem;
+    overflow: hidden;
+  }
 }
 /* Header */
 header{
@@ -74,10 +115,35 @@ header .logo {
   align-items: center;
 }
 
-ul li {
+nav li {
   margin-left: 1rem;
   display: inline;
 }
+
+header .mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: block;
+  }
+
+  header .mobile ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  header .mobile ul li {
+    display: inline;
+  }
+}
+
 /* Banner */
 
 .banner {
@@ -87,12 +153,25 @@ ul li {
 }
 
 .banner .content {
-  width: 30%;
+  width: 30rem;
 }
 
 .banner .content span {
   width: 100%;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner .content {
+    width: 80%;
+    text-align: center;
+    padding: 1rem 0;
+  }
 }
 /* Intro */
 
@@ -120,15 +199,62 @@ ul li {
   border: 1px solid lightgray;
 }
 
-.info-box img {
+.info-box .image {
   width: 35%;
   height: auto;
   padding: 1rem;
 }
 
+.info-box .image img {
+  width: 100%;
+}
+
+.info-box .image .mobile {
+  display: none;
+}
+
 .info-box .content {
   width: 65%;
   padding: 0.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .intro .image-container {
+    display: none;
+  }
+
+  .info-boxes {
+    width: 100%;
+    padding: 0;
+  }
+
+  .info-box .image .desktop {
+    display: none;
+  }
+
+  .info-box {
+    flex-direction: column;
+  }
+
+  .info-box .image {
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+  }
+
+  .info-box .image .mobile {
+    display: block;
+  }
+
+  .mobile img {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .info-boxes .content {
+    padding: 2rem 1rem;
+  }
+
 }
 
 /* Majors */
@@ -142,9 +268,8 @@ ul li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem 3.5rem;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -152,6 +277,8 @@ ul li {
   width: 30%;
   background-color: white;
   margin: 1rem;
+  text-align: left;
+  height: 28rem;
 }
 
 .major-container img{
@@ -162,6 +289,8 @@ ul li {
 .major-container .content {
   padding: 1rem 1rem 1.5rem 1rem;
 }
+
+
 
 /* Exhibitions */
 .exhibits {
@@ -181,5 +310,4 @@ footer {
   justify-content: space-between;
   border-top: 1px solid black;
   margin: 2rem auto;
-
 }
