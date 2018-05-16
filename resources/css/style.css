@@ -32,8 +32,8 @@ strong {
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 700;
   padding: 1rem 0;
   color: gray;
   line-height: 1.2;
@@ -41,7 +41,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   padding: 0.5rem 0;
   line-height: 1.4;
   color: gray;
@@ -67,7 +67,6 @@ a {
   margin: 2rem auto;
   transition: opacity 0.5s ease;
   border-radius: 2px;
-  width: 100%;
 }
 
 .btn:hover {
@@ -87,31 +86,27 @@ a {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (max-width: 1279px) {
   html {
     font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  html {
-    font-size: 12px;
-  }
-
   .image-container {
     width: 100%;
     padding: 0;
-    height: 25rem;
-    overflow: hidden;
+    height: auto;
   }
 }
+
 /* Header */
 header{
-  z-index: 100;
   position: fixed;
   background-color: white;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.3);
+  z-index: 100;
 }
 
 header .container{
@@ -148,11 +143,7 @@ header .mobile {
   header .mobile ul {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-  }
-
-  header .mobile ul li {
-    display: inline;
+    justify-content: space-between;
   }
 }
 
@@ -161,19 +152,17 @@ header .mobile {
 .banner {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   background-color: lightgray;
 }
 
 .banner .content {
-  width: 30rem;
+  margin-right: 4rem;
+  width: 20%;
+  flex-grow: 1;
 }
 
-.banner .content span {
-  width: 100%;
-  text-align: center;
-}
-
-h2 a {
+.banner a {
   color: white;
 }
 
@@ -183,9 +172,10 @@ h2 a {
   }
 
   .banner .content {
-    width: 80%;
+    width: 70%;
+    flex-grow: 1;
     text-align: center;
-    padding: 1rem 0;
+    margin: 2rem auto 0 auto;
   }
 }
 /* Intro */
@@ -195,11 +185,8 @@ h2 a {
   align-items: flex-start;
 }
 
-.intro h1 {
-  margin: 2rem 0 1.5rem 0;
-}
-
-.intro span {
+.intro .image-container span {
+  display: block;
   margin-top: 3rem;
 }
 
@@ -210,6 +197,7 @@ h2 a {
 
 .info-box {
   display: flex;
+  height: auto;
   align-items: center;
   border: 1px solid lightgray;
 }
@@ -217,7 +205,6 @@ h2 a {
 .info-box .image {
   width: 35%;
   height: auto;
-  padding: 1rem;
 }
 
 .info-box .image img {
@@ -238,42 +225,37 @@ h2 a {
   .intro {
     border-bottom: 1px solid rgba(0,0,0,0.3);
   }
+
   .intro .image-container {
     display: none;
   }
 
   .info-boxes {
     width: 100%;
-    padding: 0;
+    padding: 0.5rem;
   }
 
   .info-box .image .desktop {
     display: none;
   }
 
+  .info-box .image .mobile {
+    display: block;
+  }
+
   .info-box {
     flex-direction: column;
+    align-items: flex-start;
     border: none;
   }
 
   .info-box .image {
     width: 100%;
-    overflow: hidden;
   }
 
-  .info-box .image .mobile {
-    display: block;
+  .info-box .content {
+    margin: 1rem;
   }
-
-  .mobile img {
-    padding: 1rem;
-    width: 100%;
-  }
-
-  .info-boxes .content {
-    padding: 2rem 1rem;
-  }
-
 }
 
 /* Majors */
@@ -284,6 +266,7 @@ h2 a {
 }
 
 .majors-container .desktop {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -296,7 +279,7 @@ h2 a {
   background-color: white;
   margin: 1rem;
   text-align: left;
-  height: 28rem;
+  min-width: 19.25rem;
 }
 
 .major-container img{
@@ -305,7 +288,7 @@ h2 a {
 }
 
 .major-container .content {
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem;
 }
 
 .majors-container .mobile {
@@ -315,9 +298,7 @@ h2 a {
 @media only screen and (max-width: 479px) {
 
   .majors {
-    background-color: white;
     border-bottom: 1px solid rgba(0,0,0,0.3);
-
   }
 
   .majors-container .desktop {
@@ -325,15 +306,16 @@ h2 a {
   }
 
   .majors-container .mobile {
-    text-align: left;
     display: block;
+    text-align: left;
   }
 
   .majors-container .mobile h2 {
     padding: 1.5rem;
     margin: 1rem auto;
-    color: black;
-    background-color: lightgray;
+    color: white;
+    background-color: gray;
+    border-radius: 2px;
   }
 }
 
@@ -353,20 +335,24 @@ h2 a {
   padding: 1rem;
 }
 
-@media only screen and (max-width: 767px) {
-  .info-boxes {
-    display: none;
-  }
+.exhibits .content {
+  text-align: left;
+}
 
-  .exhibits-container .content {
+@media only screen and (max-width: 767px) {
+  .exhibits .info-boxes {
     display: none;
   }
 
   .exhibits-container .image-container {
     width: 100%;
     height: auto;
+    margin-top: 2rem;
   }
 
+  .exhibits-container .image-container .content {
+    display: none;
+  }
 }
 
 /* Footer */
@@ -375,7 +361,7 @@ footer {
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black;
+  border-top: 1px solid rgba(0,0,0,0.3);
   margin: 2rem auto;
 }
 
