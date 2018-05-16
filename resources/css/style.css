@@ -57,6 +57,11 @@ p {
 a {
   color: black;
   text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.4;
 }
 
 .btn {
@@ -75,10 +80,6 @@ a {
 
 .read-more {
   color: blue;
-}
-
-.read-more:hover {
-  opacity: 0.6;
 }
 
 .center {
